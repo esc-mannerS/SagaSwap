@@ -49,10 +49,10 @@ body {
   display: flex;
   position: relative;
   align-items: center;
-  padding: 16px;
+  padding: 1rem;
   box-shadow: var(--shadow);
   border-radius: var(--border-box);
-  margin: 26px;
+  margin: 1.6rem;
 }
 
 .header-logo {
@@ -60,6 +60,7 @@ body {
   font-size: 32px;
   display: flex;
   flex: 0 0 auto;
+  font-size: 1.8rem;
 }
 
 .header-actions {
@@ -126,7 +127,7 @@ body {
   align-items: center;
   position: relative;
   max-width: var(--width-page);
-  margin: 0 26px;
+  margin: 0 1.6rem;
 }
 
 .head-content {
@@ -146,12 +147,12 @@ body {
 }
 
 h1.main-text {
-  font-size: 50px;
+  font-size: 2.8rem;
   margin: 0.6rem 0;
 }
 
 h2.main-text {
-  font-size: 20px;
+  font-size: 1.1rem;
   margin: 0.6rem 0;
 }
 /* main category start */
@@ -161,7 +162,7 @@ h2.main-text {
   justify-content: space-between;
   align-items: center;
   padding: 0;
-  margin: 26px 0;
+  margin: 1.6rem 0;
   max-width: var(--width-page);
 }
 
@@ -199,7 +200,8 @@ h2.main-text {
   top: 70%;
   transform: translate(-50%, -50%);
   color: var(--color-2);
-  font-size: 19px;
+  font-size: 1.1rem;
+  font-weight: 150;
   margin: 0;
   text-align: center;
   background: var(--color-3);
@@ -240,12 +242,12 @@ h2.main-text {
   max-width: var(--width-page);
   display: block;
   justify-items: center;
-    margin: 1rem 0  ;
+  margin: 1rem 0  ;
 }
 
 .gallery-text {
-  font-size: 17px;
-  font-weight: 200;
+  font-size: 1.1rem;
+  font-weight: 150;
 }
 /* main gallery end */
 /* main end */
