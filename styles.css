@@ -7,7 +7,9 @@
 
 :root {
   --sub-text-size: 1.1rem;
-  --sub-text-weight: 150;
+  --sub-text-weight: 140;
+  --reg-text-size: 1rem;
+  --reg-text-weight: 120;
 }
 
 :root {
@@ -51,12 +53,12 @@ body {
 /* header start */
 .header-header {
   background: var(--color-2);
+  box-shadow: var(--shadow);
+  border-radius: var(--border-box);
   display: flex;
   position: relative;
   align-items: center;
   padding: 1rem;
-  box-shadow: var(--shadow);
-  border-radius: var(--border-box);
   margin: 1.6rem;
   min-width: 0;
 }
@@ -203,9 +205,9 @@ h2.main-text {
   color: var(--color-2);
   font-size: var(--sub-text-size);
   font-weight: var(--sub-text-weight);
+  background: var(--color-3);
   margin: 0;
   text-align: center;
-  background: var(--color-3);
   border-radius: 6px;
   padding: 0.1rem 1.3rem;
   white-space: nowrap;
@@ -270,6 +272,10 @@ h2.main-text {
   background: var(--color-2);
 }
 
+.main-header-menu ul {
+    margin: 0.6rem 0 1.4rem 0;
+}
+
 .main-header-menu li {
   border-bottom: var(--color-3) solid 0.1rem;
   padding: 0.5rem 0;
@@ -300,3 +306,67 @@ h2.main-text {
 }
 /* menu end */
 /* main end */
+
+/* footer start */
+.footer-footer {
+  background: var(--color-2);
+  box-shadow: var(--shadow);
+  border-radius: var(--border-box);
+  margin: 1.6rem;
+  display: flex;
+  position: relative;
+  min-width: 0;
+}
+
+.footer-navigation {
+  display: flex;
+  white-space: nowrap;
+  flex: 1 1 auto;
+}
+
+.navigation-column {
+  padding: 1rem;
+  width: 100%;
+}
+
+.navigation-column ul {
+  margin: 0.6rem 0 0 0;
+}
+
+.navigation-column li {
+  padding: 0.5rem 0;
+  font-weight: var(--reg-text-weight);
+  font-size: var(--reg-text-size);
+}
+
+.navigation-column li a,
+.navigation-column h5 {
+  color: var(--color-3);
+}
+
+.navigation-column h5 {
+  font-size: 1.4rem;
+}
+
+.navigation-text {
+  margin: 0;
+}
+
+.navigation-text > address {
+  padding: 10px;
+  background-color: black;
+}
+
+.navigation-some {
+  height: 30px;
+  width: 30px;
+  background-color: black;
+  border: black solid 6px;
+  border-radius: var(--border-box);
+  display: block;
+  margin-top: 0.4rem;
+}
+
+.navigation-adresse p {
+  margin: 0.4rem 0 0 0;
+}
