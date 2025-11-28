@@ -302,6 +302,7 @@ h2.main-text {
       bottom: 0;
       top: 0;
       margin: 1rem 1.6rem 1rem 1.6rem;
+      width: auto;
     }
 }
 /* menu end */
@@ -372,3 +373,4 @@ h2.main-text {
   }
 }
 /* footer end */
+
