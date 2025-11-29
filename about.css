@@ -1,6 +1,6 @@
 .main-text-body {
   color: var(--color-3);
-  padding: 0.6rem 2.4rem;
+  padding: 0.6rem 2rem;
 }
 
 .main-text-body p {
@@ -8,3 +8,4 @@
   font-weight: var(--reg-text-weight);
   margin: 0.5rem 0 0 0;
 }
+
