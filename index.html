@@ -13,35 +13,16 @@
       content="
       default-src 'self'; 
       style-src 'self'; 
-      script-src 'self'
+      script-src 'self';
       font-src 'self';"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="index.css"/>
   </head>
   <body>
     <div id="container">
       <header>
-        <div class="header-header">
-          <a href="/" class="header-logo">SagaSwap</a>
-          <div class="header-actions">
-            <div>
-              <a class="header-actions-2" href="">
-                <span class="action-text">Log ind</span>
-                <img src="header-actions/header-actions-login.png" height="27" width="27" alt="login"/>
-              </a>
-              <a
-                class="header-actions-2"
-                id="menuToggle"
-                href="javascript:void(0)"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                <span class="action-text">Menu</span>
-                <img id="menuIcon" src="header-actions/header-actions-menu.png" data-closed-src="header-actions/header-actions-menu.png" data-open-src="header-actions/header-actions-menu-close.png" height="27" width="27" alt="menu icon"/>
-              </a>
-            </div>
-          </div>
-        </div>
+        <div include-html="header-header.html"></div>
       </header>
       <main>
         <div class="main-main">
@@ -50,7 +31,7 @@
               <div class="head-content">
                 <h1 class="main-text">SagaSwap</h1>
                 <h2 class="main-text">Danmarks enkle markedsplads</h2>
-                  <div class="main-category">
+                  <div class="main-category"> 
                     <ul>
                       <li><a href=""><div><img src="main-category/main-category-lps.jpg" class="category-image"><p class="category-text">Lp'er</p></div></a></li>
                       <li><a href=""><div><img src="main-category/main-category-books.jpg" class="category-image"><p class="category-text">Bøger</p></div></a></li>
@@ -64,57 +45,16 @@
                 </div>
               </section>
             </div>
-              <nav id="slideMenu" class="main-header-menu">
-                <h4 class="menu-text">Min profil</h4>
-                <ul>
-                  <li><a href="">Brugerprofil</a></li>
-                  <li><a href="">Ny annonce</a></li>
-                  <li><a href="">Mine annoncer</a></li>
-                  <li><a href="">Profil Indstillinger</a></li>
-                </ul>
-                <h4 class="menu-text">Support</h4>
-                <ul>
-                  <li><a href="">Ofte stillede spørgsmål</a></li>
-                  <li><a href="">Kontankt kundeservice</a></li>
-                  <li><a href="">Om SagaSwap</a></li>
-                </ul>
-              </nav>
+            <div include-html="main-header-menu.html"></div>
             </div>
           </div>
         </div>
       </main>
       <footer>
-        <div class="footer-footer">
-          <div class="footer-navigation">
-            <div class="navigation-column">
-              <h5 class="navigation-text">SagaSwap ApS</h5>
-              <div class="navigation-adresse">
-              <p>Flaskvej 404</p>
-              <p>0000 København K</p>
-              <p>Danmark</p>
-              <p>VAT: DKxxxxxxxx</p>
-              </div>
-              <a href="https://x.com"><img src="logo.svg" class="navigation-some"></a>
-            </div>
-            <div class="navigation-column">
-              <h5 class="navigation-text">Support</h5>
-              <ul>
-                <li><a href="">Ofte stillede spørgsmål</a></li>
-                <li><a href="">Om SagaSwap</a></li>
-              </ul>
-            </div>
-            <div class="navigation-column">
-              <h5 class="navigation-text">Infomation</h5>
-              <ul>
-              <li><a href="">Annoncering</a></li>
-               <li><a href="">Privatlivspolitik</a></li>
-               <li><a href="">Brugervilkår</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        <div include-html="footer-footer.html"></div>
       </footer>
     </div>
+    <script src="include-html.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
