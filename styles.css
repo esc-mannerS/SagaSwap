@@ -115,20 +115,27 @@ body {
 
 .content-container {
   flex: 1;
-  align-items: flex-start;
   display: flex;
-  justify-content: center;
-  position: relative;
   flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  position: relative;
 }
 
 .main-content {
-  flex: 1;
+  /* flex: 1 1 auto;
   display: block;
   align-items: center;
   position: relative;
   max-width: var(--width-page);
-  margin: 0 1.6rem;
+  margin: 0 1.6rem; */
+  flex: 1 1 auto; /* remain a flex item in row */
+  display: flex; /* make it a flex container */
+  flex-direction: column; /* stack head and body vertically */
+  align-self: stretch; /* stretch to match menu height */
+  max-width: var(--width-page);
+  margin: 1rem 1.6rem;
+  position: relative;
 }
 
 .main-text {
@@ -154,19 +161,35 @@ h2.main-text {
   max-width: var(--width-page);
   display: block;
   justify-items: center;
-  margin: 1rem 0;
+}
+
+.body-content {
+  background-color: var(--color-2);
+  border-radius: var(--border-box);
+  box-shadow: var(--shadow);
+  padding: var(--padding-sub);
+  margin: 1rem 0 0 0;
+  max-width: var(--width-page);
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: center;
 }
 /* menu start */
+[include-html="main-header-menu.html"] {
+  display: flex;
+  align-items: stretch;
+}
+
 .main-header-menu {
   background-color: var(--color-2);
   border-radius: var(--border-box);
   box-shadow: var(--shadow);
   padding: var(--padding-sub);
-  width: 12rem;
-  height: auto;
   margin: 1rem 1.6rem 1rem 0;
-  display: none;
+  height: auto;
   align-self: stretch;
+  display: none;
+  flex: 0 0 12rem;
 }
 
 .main-header-menu.open {

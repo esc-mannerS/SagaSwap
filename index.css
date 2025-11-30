@@ -78,19 +78,11 @@
 }
 /* main category end */
 /* main gallery */
-.main-gallery-container {
-  background-color: var(--color-2);
-  border-radius: var(--border-box);
-  box-shadow: var(--shadow);
-  padding: var(--padding-sub);
-  max-width: var(--width-page);
-  display: block;
-  justify-items: center;
-  align-items: center;
-  margin: 1rem 0;
+.gallery-head {
+  color: var(--color-3);
 }
 
-.gallery-text {
+.gallery-head h3 {
   font-size: var(--sub-text-size);
   font-weight: var(--sub-text-weight);
 }
