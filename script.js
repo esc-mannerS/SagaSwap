@@ -49,3 +49,21 @@ document.querySelectorAll(".panel-head").forEach((head) => {
     body.classList.toggle("open");
   });
 });
+
+// Login page
+function showForm(formId) {
+  document
+    .querySelectorAll(".login-container")
+    .forEach((form) => form.classList.remove("active"));
+  document.getElementById(formId).classList.add("active");
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("[data-toggle-form]").forEach((link) => {
+    link.addEventListener("click", (ev) => {
+      ev.preventDefault();
+      const formId = link.dataset.toggleForm;
+      showForm(formId);
+    });
+  });
+});

@@ -34,12 +34,22 @@ ul {
   src: url("TechnaSansRegular-Xp79.otf");
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: "techna";
   background-color: var(--color-4);
   word-spacing: 0.08rem;
   overflow-x: hidden;
+}
+
+p {
+  line-height: 1.2;
 }
 
 #container {
@@ -123,16 +133,10 @@ body {
 }
 
 .main-content {
-  /* flex: 1 1 auto;
-  display: block;
-  align-items: center;
-  position: relative;
-  max-width: var(--width-page);
-  margin: 0 1.6rem; */
-  flex: 1 1 auto; /* remain a flex item in row */
-  display: flex; /* make it a flex container */
-  flex-direction: column; /* stack head and body vertically */
-  align-self: stretch; /* stretch to match menu height */
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
   max-width: var(--width-page);
   margin: 1rem 1.6rem;
   position: relative;
