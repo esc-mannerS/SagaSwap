@@ -32,15 +32,17 @@
 .login-field p {
   font-size: var(--reg-text-size);
   font-weight: var(--reg-text-weight);
+  color: var(--color-3);
   text-align: center;
   margin: 0;
-  padding-bottom: 1rem;
 }
 
 .login-field label {
   font-size: var(--reg-text-size);
   font-weight: var(--reg-text-weight);
   padding-left: 0.4rem;
+  margin: 0.6rem 0;
+  display: block;
 }
 
 .login-field form {
@@ -62,7 +64,6 @@
   font-weight: var(--reg-text-weight);
   padding: 0.3rem;
   width: 100%;
-  margin: 0.6rem 0;
   transition: 0.6s ease;
 }
 
@@ -90,4 +91,18 @@
 
 .login-field a {
   color: var(--color-1);
+}
+
+.login-field .error-message {
+  color: red;
+  padding-top: 1rem;
+}
+
+.login-field.BottomText {
+  padding-bottom: 1rem;
+  padding-top: 1.6rem;
+}
+
+.login-field.RegisterButton {
+  margin-top: 0.6rem;
 }
