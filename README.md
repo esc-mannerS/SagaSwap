@@ -20,6 +20,7 @@ Detailed version history and changelog can be found [her](https://github.com/esc
 
 This project is created by esc-mannerS.
 
-## License
+## License, Trademarks and Notice
 
 SagaSwap is [AGPL 3.0 licensed](https://github.com/esc-mannerS/SagaSwap/blob/main/LICENSE).
+Though under the conditions in [Trademarks and Notice](https://github.com/esc-mannerS/SagaSwap/blob/main/TRADEMARKS_NOTICE.MD)

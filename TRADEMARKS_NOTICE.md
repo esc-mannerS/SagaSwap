@@ -1,4 +1,4 @@
-# SagaSwap Trademark and Hosting Notice
+# SagaSwap Trademark and Targeting Notice
 
 SagaSwap is released under the GNU Affero General Public License 3.0 (AGPL-3.0). You are free to use, modify, and distribute the source code under the terms of the AGPL-3.0.
 
