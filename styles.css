@@ -16,7 +16,7 @@
   --shadow: 0px 2px 6px 0px rgba(203, 208, 213, 0.4);
   --border-box: 12px;
   --width-page: 980px;
-  --padding-sub: 13px;
+  --padding-box: 1.3rem;
 }
 
 a:link,
@@ -68,7 +68,7 @@ p {
   display: flex;
   position: relative;
   align-items: center;
-  padding: 1rem;
+  padding: var(--padding-box);
   margin: 1.6rem;
   min-width: 0;
 }
@@ -96,7 +96,8 @@ p {
   flex: 0 0 auto;
   display: flex;
   align-items: center;
-  padding: 0 0.5rem;
+  /* padding: 0 0.5rem; */
+  margin-left: 0.5rem;
   gap: 0 0.5rem;
   color: var(--color-3);
 }
@@ -161,7 +162,7 @@ h2.main-text {
   background-color: var(--color-2);
   border-radius: var(--border-box);
   box-shadow: var(--shadow);
-  padding: var(--padding-sub);
+  padding: var(--padding-box);
   max-width: var(--width-page);
   display: block;
   justify-items: center;
@@ -171,7 +172,7 @@ h2.main-text {
   background-color: var(--color-2);
   border-radius: var(--border-box);
   box-shadow: var(--shadow);
-  padding: var(--padding-sub);
+  padding: var(--padding-box);
   margin: 1rem 0 0 0;
   max-width: var(--width-page);
   display: flex;
@@ -188,7 +189,7 @@ h2.main-text {
   background-color: var(--color-2);
   border-radius: var(--border-box);
   box-shadow: var(--shadow);
-  padding: var(--padding-sub);
+  padding: var(--padding-box);
   margin: 1rem 1.6rem 1rem 0;
   height: auto;
   align-self: stretch;
@@ -254,8 +255,8 @@ h2.main-text {
 }
 
 .navigation-column {
-  padding: 1rem;
   width: 100%;
+  padding: var(--padding-box);
 }
 
 .navigation-column ul {
@@ -281,14 +282,18 @@ h2.main-text {
   margin: 0;
 }
 
+.navigation-icons {
+  display: flex;
+  margin-top: 0.4rem;
+}
+
 .navigation-some {
   height: 1.7rem;
   width: 1.7rem;
   background-color: black;
-  border: black solid 0.4rem;
-  border-radius: var(--border-box);
-  display: block;
-  margin-top: 0.4rem;
+  border: black solid 0.3rem;
+  border-radius: 0.4rem;
+  margin-right: 0.4rem;
 }
 
 .navigation-adresse p {
