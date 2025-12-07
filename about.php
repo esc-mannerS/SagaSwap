@@ -6,8 +6,8 @@
     <link rel="icon" href="sagaswap-icon.ico" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="SagaSwap" />
-    <meta name="keywords" content="SagaSwap, The Vaduz Network" />
+    <meta name="description" content="SagaSwap Danmarks Open Source Marketplads" />
+    <meta name="keywords" content="SagaSwap, Marketplace, Open Source" />
     <meta name="author" content="esc-mannerS" />
     <meta http-equiv="Content-Security-Policy" content="
       default-src 'self'; 
