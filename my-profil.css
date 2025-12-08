@@ -1,0 +1,36 @@
+.body-content.profil {
+  cursor: pointer;
+}
+
+.profil-head {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+}
+
+.profil-body {
+  display: none;
+  position: relative;
+  width: 100%;
+}
+
+.profil-body.open {
+  display: block;
+  cursor: default;
+}
+
+.user-profil {
+  width: 100%;
+  color: var(--color-3);
+  display: flex;
+  flex: 1 1 auto;
+}
+.user-profil p {
+  margin: 0.4rem 0 0 0;
+  font-size: var(--reg-text-size);
+  font-weight: var(--reg-text-weight);
+}
+
+.profil-header-column {
+  padding-right: 0.6rem;
+}

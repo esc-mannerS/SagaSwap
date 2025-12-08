@@ -26,7 +26,6 @@
   font-size: 1.4rem;
   font-weight: var(--sub-text-weight);
   text-align: center;
-  margin: 0;
 }
 
 .login-field p {
@@ -99,8 +98,11 @@
 }
 
 .login-field.BottomText {
-  padding-bottom: 1rem;
   padding-top: 1.6rem;
+}
+
+.login-field.TopText {
+  padding-top: 0;
 }
 
 .login-field.RegisterButton {

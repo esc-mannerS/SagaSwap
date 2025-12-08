@@ -120,7 +120,7 @@
                                         </p>
                                         <p>
                                             Når køber har modtaget og kontrolleret produktet fra
-                                            sælger, skal man under "Mine køb" og klikke på "Modtaget
+                                            sælger, skal man under "Mine handler" og klikke på "Modtaget
                                             og godkendt".
                                         </p>
                                         <p>

@@ -82,7 +82,7 @@ if (isset($_POST['login'])) {
             $_SESSION['email'] = $user_record['email'];
             $_SESSION['user_id'] = $user_record['id'];
             session_regenerate_id(true);
-            header("Location: index.php");
+            header("Location: my-profil.php");
             exit;
         }
     }

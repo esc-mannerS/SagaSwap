@@ -42,10 +42,18 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// FQA panel
-document.querySelectorAll(".panel-head").forEach((head) => {
-  head.addEventListener("click", () => {
-    const body = head.nextElementSibling;
+// FQA panel open and close panel
+document.querySelectorAll(".panel-group").forEach((group) => {
+  group.addEventListener("click", () => {
+    const body = group.querySelector(".panel-body");
+    body.classList.toggle("open");
+  });
+});
+
+// user profil open and close panel
+document.querySelectorAll(".body-content.profil").forEach((group) => {
+  group.addEventListener("click", () => {
+    const body = group.querySelector(".profil-body");
     body.classList.toggle("open");
   });
 });

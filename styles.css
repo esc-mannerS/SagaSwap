@@ -17,6 +17,7 @@
   --border-box: 12px;
   --width-page: 980px;
   --padding-box: 1.3rem;
+  --padding-body-box: 1.9rem;
 }
 
 a:link,
@@ -50,6 +51,18 @@ body {
 
 p {
   line-height: 1.2;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+h2,
+h3 {
+  font-size: var(--sub-text-size);
+  color: var(--color-3);
 }
 
 #container {
@@ -144,25 +157,20 @@ p {
 }
 
 .main-text {
-  color: var(--color-3);
   text-align: center;
 }
 
 h1.main-text {
+  color: var(--color-3);
   font-size: 2.6rem;
-  margin: 0.6rem 0;
-}
-
-h2.main-text {
-  font-size: var(--sub-text-size);
-  margin: 0.6rem 0;
+  margin-bottom: 0.7rem;
 }
 
 .head-content {
   background-color: var(--color-2);
   border-radius: var(--border-box);
   box-shadow: var(--shadow);
-  padding: var(--padding-box);
+  padding: var(--padding-body-box);
   max-width: var(--width-page);
   display: block;
   justify-items: center;
@@ -172,12 +180,14 @@ h2.main-text {
   background-color: var(--color-2);
   border-radius: var(--border-box);
   box-shadow: var(--shadow);
-  padding: var(--padding-box);
+  padding: var(--padding-body-box);
   margin: 1rem 0 0 0;
   max-width: var(--width-page);
-  display: flex;
+  /* display: flex; */
+  /* justify-content: center; */
   flex: 1 1 auto;
-  justify-content: center;
+  display: block;
+  justify-items: center;
 }
 /* menu start */
 [include-html="main-header-menu.html"] {
@@ -194,7 +204,7 @@ h2.main-text {
   height: auto;
   align-self: stretch;
   display: none;
-  flex: 0 0 14rem;
+  flex: 0 0 15rem;
 }
 
 .main-header-menu.open {
