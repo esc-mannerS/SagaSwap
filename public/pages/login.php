@@ -1,8 +1,8 @@
 <?php
 session_start();
-require_once '../../config.php'; // Make sure $conn is available
+require_once '../actions/config.php'; // make sure $conn is available
 
-// --- Fetch municipalities from DB ---
+// fetch municipalities from db
 $municipalities = [];
 $sql = "SELECT id, name FROM municipalities ORDER BY name ASC";
 $result = $conn->query($sql);
@@ -13,17 +13,17 @@ if ($result && $result->num_rows > 0) {
     }
 }
 
-// --- Handle error messages ---
+// handle error messages
 $errors = [
     'login' => $_SESSION['login_error'] ?? '',
     'register' => $_SESSION['register_error'] ?? ''
 ];
 $activeForm = $_SESSION['active_form'] ?? 'login';
 
-// --- Clear only the used session variables ---
+// clear only the used session variables
 unset($_SESSION['login_error'], $_SESSION['register_error'], $_SESSION['active_form']);
 
-// --- Helper functions ---
+// helper functions
 function showError($error) {
     return !empty($error) ? "<p class='error-message'>$error</p>" : '';
 }
@@ -39,7 +39,7 @@ function isActiveForm($formName, $activeForm) {
 
 <head>
     <title>Log ind</title>
-    <link rel="icon" href="sagaswap-icon.ico" />
+    <link rel="icon" href="/sagaswap/public/images/sagaswap-icon.ico" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="SagaSwap Danmarks Open Source Marketplads" />
@@ -69,7 +69,7 @@ function isActiveForm($formName, $activeForm) {
                         </div>
                         <div class="body-content">
                             <div class="login-container <?= isActiveForm('login', $activeForm); ?>" id="login-form">
-                                <form action="../../login-register.php" method="post">
+                                <form action="../actions/login-register.php" method="post">
                                     <div class="login-field TopText">
                                         <h3>Log ind</h3>
                                         <?= showError($errors['login']); ?>
@@ -96,7 +96,7 @@ function isActiveForm($formName, $activeForm) {
                             </div>
                             <div class="login-container <?= isActiveForm('register', $activeForm); ?>"
                                 id="register-form">
-                                <form action="../../login-register.php" method="post">
+                                <form action="../actions/login-register.php" method="post">
                                     <div class="login-field TopText">
                                         <h3>Opret bruger</h3>
                                         <?= showError($errors['register']); ?>

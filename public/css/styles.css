@@ -300,6 +300,9 @@ h1.main-text {
   background-color: black;
   border: black solid 0.3rem;
   border-radius: 0.4rem;
+}
+
+.navigation-some.one {
   margin-right: 0.4rem;
 }
 

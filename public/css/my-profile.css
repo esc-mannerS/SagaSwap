@@ -28,6 +28,36 @@
   font-weight: var(--reg-text-weight);
 }
 
-.profile-header-column {
+.profile-body-group {
+  width: 40%;
+  display: flex;
+}
+
+.profile-body-group.two {
+  width: 20%;
+}
+
+.profile-body-column {
   padding-right: 0.6rem;
+}
+
+.delete-user {
+  background: var(--color-1);
+  box-shadow: var(--shadow);
+  border-radius: var(--border-box);
+  color: var(--color-4);
+  border: var(--color-1) solid 0.1rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+.profile-body-group.three {
+  display: block;
+  position: relative;
+}
+
+.id-created-group {
+  width: 100%;
+  display: flex;
+  margin: 0 0 0.4rem 0;
 }

@@ -1,0 +1,12 @@
+.body-text {
+  color: var(--color-1);
+  font-size: var(--sub-text-size);
+}
+
+.navigation-icons {
+  margin-top: 0;
+}
+
+.body-action.two {
+  margin-top: 1rem;
+}

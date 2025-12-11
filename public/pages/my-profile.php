@@ -34,7 +34,7 @@ $mysqli->close();
 
 <head>
     <title>Brugerprofil</title>
-    <link rel="icon" href="sagaswap-icon.ico" />
+    <link rel="icon" href="/sagaswap/public/images/sagaswap-icon.ico" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="SagaSwap Danmarks Open Source Marketplads" />
@@ -62,60 +62,70 @@ $mysqli->close();
                             <h1 class="main-text">Min profil</h1>
                             <h2 class="main-text"><?php echo "Velkommen til ".htmlspecialchars($username);?></h2>
                         </div>
-                        <div class="body-content profile">
-                            <div class="profile-head">
-                                <h3>Brugerprofil</h3>
-                            </div>
-                            <div class="profile-body">
-                                <div class="user-profile">
-                                    <div class="profile-header-column">
-                                        <p>Brugernavn:</p>
-                                        <p>E-mailadresse:</p>
-                                        <p>Kommune:</P>
-                                    </div>
-                                    <div class="profile-header-column">
-                                        <p><?php echo htmlspecialchars($username); ?></p>
-                                        <p><?php echo htmlspecialchars($email); ?></p>
-                                        <p><?php echo htmlspecialchars($municipality_name); ?></p>
-                                    </div>
-                                    <div class="profile-header-column">
-                                        <p>Bruger id:</p>
-                                        <p>Bruger oprettet:</P>
-                                    </div>
-                                    <div class="profile-header-column">
-                                        <p><?php echo htmlspecialchars($id); ?></p>
-                                        <p><?php echo date("d m Y", strtotime(htmlspecialchars($created_at))); ?>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="body-content profile">
+                        <div class="body-content">
                             <div class="profile-head">
                                 <h3>Ny annonce</h3>
                             </div>
                             <div class="profile-body">
                             </div>
                         </div>
-                        <div class="body-content profile">
+                        <div class="body-content">
                             <div class="profile-head">
                                 <h3>Mine annoncer</h3>
                             </div>
                             <div class="profile-body">
                             </div>
                         </div>
-                        <div class="body-content profile">
+                        <div class="body-content">
                             <div class="profile-head">
                                 <h3>Mine handler</h3>
                             </div>
                             <div class="profile-body">
                             </div>
                         </div>
-                        <div class="body-content profile">
+                        <div class="body-content">
                             <div class="profile-head">
-                                <h3>Profli indstillinger</h3>
+                                <h3>Profil indstillinger</h3>
                             </div>
                             <div class="profile-body">
+                                <div class="user-profile">
+                                    <div class="profile-body-group">
+                                        <div class="profile-body-column">
+                                            <p>Brugernavn:</p>
+                                            <p>E-mailadresse:</p>
+                                            <p>Kommune:</P>
+                                        </div>
+                                        <div class="profile-body-column">
+                                            <p><?php echo htmlspecialchars($username); ?></p>
+                                            <p><?php echo htmlspecialchars($email); ?></p>
+                                            <p><?php echo htmlspecialchars($municipality_name); ?></p>
+                                        </div>
+                                    </div>
+                                    <div class="profile-body-group two">
+                                    </div>
+                                    <div class="profile-body-group three">
+                                        <div class="id-created-group">
+                                            <div class="profile-body-column">
+                                                <p>Bruger id:</p>
+                                                <p>Bruger oprettet:</P>
+                                            </div>
+                                            <div class="profile-body-column">
+                                                <p><?php echo htmlspecialchars($id); ?></p>
+                                                <p><?php echo date("d m Y", strtotime(htmlspecialchars($created_at))); ?>
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <form action="/sagaswap/public/actions/delete-user.php" method="POST"
+                                            onsubmit="return confirm('Er du sikker på, at du vil slette din konto permanent? Dette kan ikke fortrydes!');">
+                                            <input type="hidden" name="user_id"
+                                                value="<?php echo htmlspecialchars($id); ?>">
+                                            <button type="submit" class="delete-user">Slet min bruger og alt
+                                                data!</button>
+                                        </form>
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -3,7 +3,7 @@
 
 <head>
     <title>Brugervilkår</title>
-    <link rel="icon" href="sagaswap-icon.ico" />
+    <link rel="icon" href="/sagaswap/public/images/sagaswap-icon.ico" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="SagaSwap Danmarks Open Source Marketplads" />
@@ -285,7 +285,7 @@
             <?php include('../includes/footer-footer.php');?>
         </footer>
     </div>
-    <script src="../../script.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 
 </html>

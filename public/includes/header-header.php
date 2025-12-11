@@ -9,7 +9,7 @@ if (session_status() === PHP_SESSION_NONE) {
         <div>
             <?php if (isset($_SESSION['user_id'])): ?>
             <!-- user logged in -->
-            <a class="header-actions-2" href="../pages/header-logout.php">
+            <a class="header-actions-2" href="../actions/header-logout.php">
                 <span class="action-text">Log ud</span>
                 <img src="/sagaswap/public/includes/header-actions/login.png" height="27" width="27" alt="logout" />
             </a>

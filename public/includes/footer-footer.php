@@ -10,7 +10,7 @@
             </div>
             <div class="navigation-icons">
                 <a href="https://x.com"><img src="/sagaswap/public/includes/images/x-logo.svg"
-                        class="navigation-some" /></a>
+                        class="navigation-some one" /></a>
                 <a href="https://github.com/esc-mannerS/SagaSwap"><img
                         src="/sagaswap/public/includes/images/github-logo.svg" class="navigation-some" /></a>
             </div>
