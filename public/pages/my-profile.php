@@ -101,10 +101,8 @@ $mysqli->close();
                                             <p><?php echo htmlspecialchars($municipality_name); ?></p>
                                         </div>
                                     </div>
-                                    <div class="profile-body-group two">
-                                    </div>
                                     <div class="profile-body-group three">
-                                        <div class="id-created-group">
+                                        <div class="dead-user-info info">
                                             <div class="profile-body-column">
                                                 <p>Bruger id:</p>
                                                 <p>Bruger oprettet:</P>
@@ -115,15 +113,16 @@ $mysqli->close();
                                                 </p>
                                             </div>
                                         </div>
-
-                                        <form action="/sagaswap/public/actions/delete-user.php" method="POST"
-                                            onsubmit="return confirm('Er du sikker på, at du vil slette din konto permanent? Dette kan ikke fortrydes!');">
-                                            <input type="hidden" name="user_id"
-                                                value="<?php echo htmlspecialchars($id); ?>">
-                                            <button type="submit" class="delete-user">Slet min bruger og alt
-                                                data!</button>
-                                        </form>
-
+                                        <div class="dead-user-info delete">
+                                            <form action="/sagaswap/public/actions/delete-user.php" method="POST"
+                                                onsubmit="return confirm('Er du sikker på, at du vil slette din konto permanent? Dette kan ikke fortrydes!');">
+                                                <input type="hidden" name="user_id"
+                                                    value="<?php echo htmlspecialchars($id); ?>">
+                                                <button type="submit" class="delete-user">
+                                                    <span>Slet min bruger og alt data!</span>
+                                                </button>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

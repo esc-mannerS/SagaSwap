@@ -136,7 +136,7 @@
 }
 
 .login-field .error-message {
-  color: red;
+  color: var(--color-5);
   padding-top: 1rem;
 }
 
