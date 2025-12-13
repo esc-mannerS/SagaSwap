@@ -96,13 +96,22 @@ $mysqli->close();
                                                 <input type="hidden" name="category_id" id="category_id" required>
                                             </div>
                                         </div>
-                                        <div class="listing-field">
-                                            <label>ISO</label>
-                                            <input type="text" name="iso" placeholder="ISO"></input>
-                                        </div>
-                                        <div class="listing-field">
-                                            <label>Pris</label>
-                                            <input type="text" name="price" placeholder="Pris"></input>
+                                        <div class="fields-after-category">
+                                            <div class="listing-field">
+                                                <label>ISBN eller title</label>
+                                                <input type="text" name="iso" placeholder="Indsæt ISBN"
+                                                    required></input>
+                                                <input type="text" name="title" placeholder="Eller title"
+                                                    required></input>
+                                            </div>
+                                            <div class="listing-field">
+                                                <label>Pris</label>
+                                                <input type="text" name="price" id="price" placeholder="Skriv din pris"
+                                                    required></input>
+                                            </div>
+                                            <div class="listing-field">
+                                                <button type="submit" name="list">Opret annonce</button>
+                                            </div>
                                         </div>
                                     </form>
                                 </div>

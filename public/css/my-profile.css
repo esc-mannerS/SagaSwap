@@ -30,18 +30,36 @@
 }
 
 .listing-field {
-  padding: 0.5rem 0;
+  padding-top: 0.7rem;
+}
+
+.listing-field :hover {
+  border-color: var(--color-1);
+}
+
+.custom-select {
+  margin-bottom: 0.3rem;
+}
+
+.fields-after-category {
+  display: none;
 }
 
 .listing-field label {
   padding-left: 0.6rem;
   margin: 0.6rem 0;
+  display: block;
 }
 
 .listing-field input {
   width: 100%;
+  margin-bottom: 0.3rem;
 }
 
+.listing-field button {
+  width: 100%;
+  margin-top: 0.6rem;
+}
 /* new listing end */
 /* profil settings start */
 .user-profile {
