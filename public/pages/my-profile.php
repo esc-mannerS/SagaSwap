@@ -99,10 +99,9 @@ $mysqli->close();
                                         <div class="fields-after-category">
                                             <div class="listing-field">
                                                 <label>ISBN eller title</label>
-                                                <input type="text" name="iso" placeholder="Indsæt ISBN"
+                                                <input type="text" name="isbn" placeholder="Indsæt ISBN"
                                                     required></input>
-                                                <input type="text" name="title" placeholder="Eller title"
-                                                    required></input>
+                                                <input type="text" name="title" placeholder="Eller title"></input>
                                             </div>
                                             <div class="listing-field">
                                                 <label>Pris</label>

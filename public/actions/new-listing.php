@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once 'config.php';
+require_once 'BookService.php'; // <-- include the API class
 
 // sanitize input
 function sanitize($input) {
@@ -12,12 +13,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Form values
     $user_id = $_SESSION['user_id'];
     $category_id = (int)$_POST['category_id'];
-    $iso_input = sanitize(trim($_POST['iso']));
+    $isbn_input = sanitize($_POST['isbn']);
     $price_input = sanitize(trim($_POST['price']));
     // inputs masks
     $price_input = str_replace('.', '', $price_input); // remove thousands separator
     $price_input = str_replace(',', '.', $price_input); // decimal to dot
-    $iso_input = preg_replace('/\D+/', '', $iso_input); // cleaning
+    $isbn_input = preg_replace('/\D+/', '', $isbn_input); // cleaning
+
+    // --- API call: fetch book metadata ---
+    if (!empty($isbn_input)) {
+        $bookId = BookService::getOrCreateByIsbn($conn, $isbn_input);
+        // Optionally, you could use $bookId if you wanted to link it
+        // But since you said not to touch insertion, we just call it
+    }
 
     // get municipality_id from users table
     $stmt = $conn->prepare(
@@ -28,10 +36,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bind_result($municipality_id);
     $stmt->fetch();
     $stmt->close();
+    if (!empty($isbn_input)) {
+    $bookId = BookService::getOrCreateByIsbn($conn, $isbn_input);
+    if (!$bookId) {
+        die("Error: Could not create or find book with ISBN $isbn_input");
+    }
+}
 
-    // 2insert listing including municipality_id
+    // now safe to insert listing
     $stmt = $conn->prepare(
-        "INSERT INTO listings (user_id, category_id, municipality_id, iso, price)
+        "INSERT INTO listings (user_id, category_id, municipality_id, isbn, price)
+        VALUES (?, ?, ?, ?, ?)"
+    );
+
+    // insert listing including municipality_id
+    $stmt = $conn->prepare(
+        "INSERT INTO listings (user_id, category_id, municipality_id, isbn, price)
          VALUES (?, ?, ?, ?, ?)"
     );
 
@@ -40,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $user_id,
         $category_id,
         $municipality_id,
-        $iso_input,
+        $isbn_input,
         $price_input
     );
 
