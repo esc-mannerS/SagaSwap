@@ -69,7 +69,7 @@ function isActiveForm($formName, $activeForm) {
                         </div>
                         <div class="body-content">
                             <div class="login-container <?= isActiveForm('login', $activeForm); ?>" id="login-form">
-                                <form action="../actions/login-register.php" method="post">
+                                <form action="../actions/login/login-register.php" method="post">
                                     <div class="login-field TopText">
                                         <h3>Log ind</h3>
                                         <?= showError($errors['login']); ?>
@@ -98,7 +98,7 @@ function isActiveForm($formName, $activeForm) {
                             </div>
                             <div class="login-container <?= isActiveForm('register', $activeForm); ?>"
                                 id="register-form">
-                                <form action="../actions/login-register.php" method="post">
+                                <form action="../actions/login/login-register.php" method="post">
                                     <div class="login-field TopText">
                                         <h3>Opret bruger</h3>
                                         <?= showError($errors['register']); ?>

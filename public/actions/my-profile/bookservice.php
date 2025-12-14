@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/api_config.php';
+require_once __DIR__ . '../../api_config.php';
 
 class BookService {
 

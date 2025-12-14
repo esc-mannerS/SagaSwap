@@ -81,7 +81,7 @@ $mysqli->close();
                             </div>
                             <div class="profile-body" id="new-listing">
                                 <div class="new-listing">
-                                    <form action="../actions/new-listing.php" method="post">
+                                    <form action="../actions/my-profile/new-listing.php" method="post">
                                         <div class="listing-field">
                                             <label>Kategori</label>
                                             <div class="custom-select" id="custom-category">
@@ -177,7 +177,8 @@ $mysqli->close();
                                             </div>
                                         </div>
                                         <div class="dead-user-info delete">
-                                            <form action="/sagaswap/public/actions/delete-user.php" method="POST"
+                                            <form action="/sagaswap/public/actions/my-profile/delete-user.php"
+                                                method="POST"
                                                 onsubmit="return confirm('Er du sikker på, at du vil slette din konto permanent? Dette kan ikke fortrydes!');">
                                                 <input type="hidden" name="user_id"
                                                     value="<?php echo htmlspecialchars($id); ?>">

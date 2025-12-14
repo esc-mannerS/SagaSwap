@@ -179,6 +179,7 @@ function initProfilePanels() {
 }
 
 document.addEventListener("DOMContentLoaded", initProfilePanels);
+
 // show fields when category is set
 function initNewListingFields() {
   const fieldsContainer = document.querySelector(".fields-after-category");

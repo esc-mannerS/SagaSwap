@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'config.php';
+require_once '../config.php';
 require_once 'bookService.php';
 
 // sanitize input
@@ -66,6 +66,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->close();
 
     // redirect
-    header("Location: ../pages/my-profile.php");
+    header("Location: ../../pages/my-profile.php");
     exit;
 }
