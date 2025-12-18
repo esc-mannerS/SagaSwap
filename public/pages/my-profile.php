@@ -137,19 +137,15 @@ $mysqli->close();
                                             <div class="fields-after-category">
                                                 <div class="listing-field image">
                                                     <label>Billeder</label>
-                                                    <input type="file" id="imageInput" accept="image/*" hidden>
+                                                    <input type="file" id="imageInput" accept="image/*" hidden multiple>
                                                     <input type="file" id="realImages" name="images[]" hidden multiple
                                                         required>
                                                     <div class="images-container">
                                                         <div id="customUploadBox" class="custom-upload-box">
-                                                            Klik for at uploade billede
+                                                            Upload 2 billeder: forsiden og bagsiden
                                                         </div>
                                                         <div id="imagePreview" class="image-preview"></div>
                                                     </div>
-                                                    <p>
-                                                        Upload venligst 2 billeder af bogen:<br>
-                                                        et af forsiden og et af bagsiden
-                                                    </p>
                                                 </div>
                                             </div>
                                         </div>

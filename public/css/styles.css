@@ -49,6 +49,27 @@ ul {
   box-sizing: border-box;
 }
 
+@supports (scrollbar-color: red blue) {
+  .scroll {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-2) var(--color-6);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0.8rem;
+  height: 1.8rem;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-6);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-2);
+  border-radius: 10rem;
+}
+
 body {
   margin: 0;
   font-family: "techna";

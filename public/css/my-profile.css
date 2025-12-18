@@ -96,7 +96,7 @@
 }
 
 .custom-upload-box {
-  border: 2px dashed var(--color-2);
+  border: var(--color-2) dashed 0.2rem;
   border-radius: var(--border-box);
   padding: 1.2rem;
   text-align: center;
@@ -109,6 +109,10 @@
 }
 
 .custom-upload-box:hover {
+  border-color: var(--color-1);
+}
+
+.custom-upload-box.dragover {
   border-color: var(--color-1);
 }
 

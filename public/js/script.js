@@ -247,35 +247,65 @@ function initPriceCorrection() {
 
 // image previewer
 const customBox = document.getElementById("customUploadBox");
-
-customBox.addEventListener("click", () => {
-  input.click();
-});
-
 const input = document.getElementById("imageInput");
 const realInput = document.getElementById("realImages");
 const preview = document.getElementById("imagePreview");
 
 const dt = new DataTransfer();
 
-input.addEventListener("change", function (e) {
-  const file = e.target.files[0];
-  if (!file || !file.type.startsWith("image/")) return;
+// open file picker
+customBox.addEventListener("click", () => {
+  input.click();
+});
 
-  if (dt.files.length >= 2) {
-    alert("Du kan kun uploade 2 billeder.");
-    input.value = "";
-    return;
+// handle file selection
+function handleFiles(files) {
+  for (const file of files) {
+    if (!file.type.startsWith("image/")) continue;
+
+    if (dt.files.length >= 2) {
+      alert("Du kan kun uploade 2 billeder.");
+      break;
+    }
+
+    // add file
+    dt.items.add(file);
+    realInput.files = dt.files;
+
+    // preview
+    const img = document.createElement("img");
+    img.src = URL.createObjectURL(file);
+    img.onload = () => URL.revokeObjectURL(img.src);
+    preview.appendChild(img);
+
+    // change text
+    if (dt.files.length === 2) {
+      customBox.textContent = "Perfekt, så er de på plads!";
+    }
   }
+}
 
-  dt.items.add(file);
-  realInput.files = dt.files;
-
-  const img = document.createElement("img");
-  img.src = URL.createObjectURL(file);
-  img.onload = () => URL.revokeObjectURL(img.src);
-  preview.appendChild(img);
-
+// input change (click upload)
+input.addEventListener("change", (e) => {
+  handleFiles(Array.from(e.target.files));
   input.value = "";
+});
+
+// drag and drop
+customBox.addEventListener("dragover", (e) => {
+  e.preventDefault();
+  customBox.classList.add("dragover");
+});
+
+customBox.addEventListener("dragleave", () => {
+  customBox.classList.remove("dragover");
+});
+
+customBox.addEventListener("drop", (e) => {
+  e.preventDefault();
+  customBox.classList.remove("dragover");
+
+  const files = Array.from(e.dataTransfer.files);
+  handleFiles(files);
 });
 // my profile end
