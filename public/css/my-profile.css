@@ -92,6 +92,7 @@
 .images-container {
   display: flex;
   margin: 0.62rem;
+  height: 8.2rem;
 }
 
 .custom-upload-box {
@@ -103,7 +104,7 @@
   cursor: pointer;
   background: var(--color-4);
   transition: var(--input-transition);
-  height: 8rem;
+  width: 7rem;
   flex: 1 1 auto;
 }
 
@@ -116,7 +117,7 @@
 }
 
 .image-preview img {
-  height: 8rem;
+  width: 7rem;
   margin-left: 0.62rem;
   object-fit: cover;
   border-radius: var(--border-box);
