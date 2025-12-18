@@ -54,10 +54,12 @@ $mysqli->close();
     <meta name="keywords" content="SagaSwap, Marketplace, Open Source" />
     <meta name="author" content="esc-mannerS" />
     <meta http-equiv="Content-Security-Policy" content="
-      default-src 'self'; 
-      style-src 'self'; 
-      script-src 'self';
-      font-src 'self';" />
+        default-src 'self';
+        script-src 'self';
+        style-src 'self';
+        font-src 'self';
+        img-src 'self' blob: data:;
+    ">
     <link rel="stylesheet" href="/sagaswap/public/css/styles.css" />
     <link rel="stylesheet" href="/sagaswap/public/css/my-profile.css" />
 </head>
@@ -133,14 +135,19 @@ $mysqli->close();
                                         </div>
                                         <div class="listing-column">
                                             <div class="fields-after-category">
-                                                <div class="listing-field">
+                                                <div class="listing-field image">
                                                     <label>Billeder</label>
-                                                    <input type="file" id="imageInput" name="images[]"
-                                                        accept="image/jpeg,image/jpg,image/png,image/webp" multiple
+                                                    <input type="file" id="imageInput" accept="image/*" hidden>
+                                                    <input type="file" id="realImages" name="images[]" hidden multiple
                                                         required>
-                                                    <div id="imagePreview" class="image-preview"></div>
+                                                    <div class="images-container">
+                                                        <div id="customUploadBox" class="custom-upload-box">
+                                                            Klik for at uploade billede
+                                                        </div>
+                                                        <div id="imagePreview" class="image-preview"></div>
+                                                    </div>
                                                     <p>
-                                                        Her skal du oploade 2 billeder af bogen:<br>
+                                                        Upload venligst 2 billeder af bogen:<br>
                                                         et af forsiden og et af bagsiden
                                                     </p>
                                                 </div>

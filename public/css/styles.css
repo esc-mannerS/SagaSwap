@@ -23,6 +23,10 @@
   --padding-body-box: 1.9rem;
 }
 
+:root {
+  --input-transition: 0.6s ease;
+}
+
 a:link,
 a:visited {
   text-decoration: none;
@@ -90,7 +94,7 @@ input {
   font-size: 0.9rem;
   font-weight: var(--reg-text-weight);
   padding: 0.3rem;
-  transition: 0.6s ease;
+  transition: var(--input-transition);
 }
 
 button {
@@ -101,7 +105,7 @@ button {
   font-size: 0.9rem;
   font-weight: var(--reg-text-weight);
   padding: 0.3rem;
-  transition: 0.6s ease;
+  transition: var(--input-transition);
 }
 
 #container {
@@ -289,7 +293,7 @@ h1.main-text {
   color: var(--color-3);
   padding: 0.3rem;
   width: 100%;
-  transition: 0.6s ease;
+  transition: var(--input-transition);
   position: relative;
 }
 

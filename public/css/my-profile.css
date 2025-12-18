@@ -35,7 +35,7 @@
 }
 
 .listing-field {
-  padding-top: 2rem;
+  margin-top: 2rem;
   position: relative;
 }
 
@@ -49,7 +49,7 @@
 
 .listing-field label {
   position: absolute;
-  bottom: 1.6rem;
+  top: -0.6rem;
   left: 1.3rem;
   background-color: var(--color-2);
   display: block;
@@ -59,15 +59,15 @@
   width: 100%;
 }
 
-.listing-field.BottomText {
-  padding-top: 0;
-}
-
-.listing-field.BottomText p {
-  margin: 0.2rem 0 0.2rem 0.62rem;
+.listing-field p {
+  margin: 0.2rem 0.2rem 0.2rem 0.62rem;
   font-size: var(--input-text-size);
   font-weight: var(--reg-text-weight);
   color: var(--color-3);
+}
+
+.listing-field.BottomText {
+  margin-top: 0;
 }
 
 .listing-field.BottomText a {
@@ -77,6 +77,49 @@
 
 .listing-field button {
   width: 100%;
+}
+
+.listing-field.image {
+  border-radius: var(--border-box);
+  background-color: var(--color-2);
+  border: var(--color-4) solid 0.3rem;
+}
+
+.listing-field.image input {
+  border: 0;
+}
+
+.images-container {
+  display: flex;
+  margin: 0.62rem;
+}
+
+.custom-upload-box {
+  border: 2px dashed var(--color-2);
+  border-radius: var(--border-box);
+  padding: 1.2rem;
+  text-align: center;
+  align-content: center;
+  cursor: pointer;
+  background: var(--color-4);
+  transition: var(--input-transition);
+  height: 8rem;
+  flex: 1 1 auto;
+}
+
+.custom-upload-box:hover {
+  border-color: var(--color-1);
+}
+
+.image-preview {
+  display: flex;
+}
+
+.image-preview img {
+  height: 8rem;
+  margin-left: 0.62rem;
+  object-fit: cover;
+  border-radius: var(--border-box);
 }
 /* new listing end */
 /* profil settings start */

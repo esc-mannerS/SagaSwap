@@ -245,23 +245,37 @@ function initPriceCorrection() {
   });
 }
 
-document.addEventListener("change", function (e) {
-  if (e.target.id !== "imageInput") return;
+// image previewer
+const customBox = document.getElementById("customUploadBox");
 
-  const preview = document.getElementById("imagePreview");
-  if (!preview) return;
-
-  preview.innerHTML = "";
-
-  [...e.target.files].forEach((file) => {
-    if (!file.type.startsWith("image/")) return;
-
-    const img = document.createElement("img");
-    img.src = URL.createObjectURL(file);
-    img.style.width = "120px";
-    img.style.height = "160px";
-    preview.appendChild(img);
-  });
+customBox.addEventListener("click", () => {
+  input.click();
 });
 
+const input = document.getElementById("imageInput");
+const realInput = document.getElementById("realImages");
+const preview = document.getElementById("imagePreview");
+
+const dt = new DataTransfer();
+
+input.addEventListener("change", function (e) {
+  const file = e.target.files[0];
+  if (!file || !file.type.startsWith("image/")) return;
+
+  if (dt.files.length >= 2) {
+    alert("Du kan kun uploade 2 billeder.");
+    input.value = "";
+    return;
+  }
+
+  dt.items.add(file);
+  realInput.files = dt.files;
+
+  const img = document.createElement("img");
+  img.src = URL.createObjectURL(file);
+  img.onload = () => URL.revokeObjectURL(img.src);
+  preview.appendChild(img);
+
+  input.value = "";
+});
 // my profile end

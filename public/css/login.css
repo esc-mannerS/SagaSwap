@@ -19,7 +19,7 @@
 }
 
 .login-field {
-  padding-top: 2rem;
+  margin-top: 2rem;
   position: relative;
 }
 
@@ -43,7 +43,7 @@
 
 .login-field label {
   position: absolute;
-  bottom: 1.6rem;
+  top: -0.6rem;
   left: 1.3rem;
   background-color: var(--color-2);
   display: block;
@@ -79,10 +79,6 @@
   padding-top: 1rem;
 }
 
-.login-field.BottomText {
-  padding-top: 1.6rem;
-}
-
 .login-field.TopText {
-  padding-top: 0;
+  margin-top: 0;
 }
