@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     $allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
-    $uploadDir = '../../uploads/listings/';
+    $uploadDir = '../../user-uploads/listings/';
 
     // form values
     $user_id = $_SESSION['user_id'];
