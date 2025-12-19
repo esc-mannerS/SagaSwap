@@ -33,7 +33,7 @@
         <div class="navigation-column">
             <h5 class="navigation-text">Infomation</h5>
             <ul>
-                <li><a href="">Annoncering</a></li>
+                <li><a href="/sagaswap/public/pages/advert.php">Erhvervs annoncering</a></li>
                 <li><a href="">Privatlivspolitik</a></li>
                 <li><a href="/sagaswap/public/pages/userterms.php">Brugervilkår</a></li>
             </ul>
