@@ -95,7 +95,6 @@ function initCustomDropdowns() {
     });
   });
 }
-
 // global functions end
 
 // fqa  start

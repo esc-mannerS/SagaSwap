@@ -2,9 +2,9 @@
   --color-1: #da3f19;
   --color-2: #cdd1cf;
   --color-3: #071c0a;
-  --color-4: #F3F4F4;
+  --color-4: #f3f4f4;
   --color-5: #e60000;
-  --color-6: #516054:
+  --color-6: #646d66;
 }
 
 :root {
@@ -40,13 +40,15 @@ ul {
 
 @font-face {
   font-family: "techna";
-  src: url("/sagaswap/public/fonts/TechnaSansRegular-Xp79.otf") format("opentype");
+  src: url("/sagaswap/public/fonts/TechnaSansRegular-Xp79.otf")
+    format("opentype");
 }
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  font-family: "techna";
 }
 
 @supports (scrollbar-color: red blue) {
@@ -72,7 +74,6 @@ ul {
 
 body {
   margin: 0;
-  font-family: "techna";
   background-color: var(--color-4);
   word-spacing: 0.08rem;
   overflow-x: hidden;
@@ -107,13 +108,13 @@ label {
 }
 
 input {
+  font-size: calc(var(--input-text-size) - 10%);
+  font-weight: var(--reg-text-weight);
   outline: none;
   border-radius: var(--border-box);
   background-color: var(--color-2);
   border: var(--color-4) solid 0.3rem;
   color: var(--color-3);
-  font-size: 0.9rem;
-  font-weight: var(--reg-text-weight);
   padding: 0.3rem;
   transition: var(--input-transition);
 }
@@ -122,11 +123,15 @@ button {
   border-radius: var(--border-box);
   background-color: var(--color-2);
   border: var(--color-4) solid 0.3rem;
-  color: var(--color-3);
-  font-size: 0.9rem;
+  color: var(--color-6);
+  font-size: calc(var(--input-text-size) - 10%);
   font-weight: var(--reg-text-weight);
   padding: 0.3rem;
   transition: var(--input-transition);
+}
+
+button:hover {
+  color: var(--color-3);
 }
 
 #container {
@@ -311,7 +316,6 @@ h1.main-text {
   border-radius: var(--border-box);
   background-color: var(--color-2);
   border: var(--color-4) solid 0.3rem;
-  color: var(--color-3);
   padding: 0.3rem;
   width: 100%;
   transition: var(--input-transition);
@@ -329,7 +333,6 @@ h1.main-text {
   width: 100%;
   left: 0;
   right: 0;
-  border-top: none;
   background-color: var(--color-4);
   border: var(--color-4) solid 0.3rem;
   box-sizing: border-box;
@@ -343,6 +346,7 @@ h1.main-text {
 .option {
   padding: 10px;
   cursor: pointer;
+  color: var(--color-3);
 }
 
 .option:hover {
