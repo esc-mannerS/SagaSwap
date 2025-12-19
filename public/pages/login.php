@@ -1,38 +1,4 @@
-<?php
-session_start();
-require_once '../actions/config.php'; // make sure $conn is available
-
-// fetch municipalities from db
-$municipalities = [];
-$sql = "SELECT id, name FROM municipalities ORDER BY name ASC";
-$result = $conn->query($sql);
-
-if ($result && $result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $municipalities[] = $row;
-    }
-}
-
-// handle error messages
-$errors = [
-    'login' => $_SESSION['login_error'] ?? '',
-    'register' => $_SESSION['register_error'] ?? ''
-];
-$activeForm = $_SESSION['active_form'] ?? 'login';
-
-// clear only the used session variables
-unset($_SESSION['login_error'], $_SESSION['register_error'], $_SESSION['active_form']);
-
-// helper functions
-function showError($error) {
-    return !empty($error) ? "<p class='error-message'>$error</p>" : '';
-}
-
-function isActiveForm($formName, $activeForm) {
-    return $formName === $activeForm ? 'active' : '';
-}
-?>
-
+<?php require_once '../actions/login/login-logic.php'; ?>
 
 <!DOCTYPE html>
 <html lang="da">
@@ -151,7 +117,7 @@ function isActiveForm($formName, $activeForm) {
             <?php include('../includes/footer-footer.php');?>
         </footer>
     </div>
-    <script src="../js/script.js"></script>
+    <script src="/sagaswap/public/js/script.js"></script>
 </body>
 
 </html>

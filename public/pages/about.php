@@ -89,7 +89,7 @@
             <?php include('../includes/footer-footer.php');?>
         </footer>
     </div>
-    <script src="../js/script.js"></script>
+    <script src="/sagaswap/public/js/script.js"></script>
 </body>
 
 </html>

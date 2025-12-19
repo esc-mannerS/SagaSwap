@@ -51,7 +51,7 @@
             </div>
         </main>
     </div>
-    <script src="script.js"></script>
+    <script src="/sagaswap/public/js/script.js"></script>
 </body>
 
 </html>

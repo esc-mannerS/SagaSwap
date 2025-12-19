@@ -15,8 +15,8 @@
         script-src 'self';
         font-src 'self';
         img-src 'self';" />
-    <link rel="stylesheet" href="../css/styles.css" />
-    <link rel="stylesheet" href="../css/userterms.css" />
+    <link rel="stylesheet" href="/sagaswap/public/css/styles.css" />
+    <link rel="stylesheet" href="/sagaswap/public/css/userterms.css" />
 </head>
 
 <body>
@@ -286,7 +286,7 @@
             <?php include('../includes/footer-footer.php');?>
         </footer>
     </div>
-    <script src="../js/script.js"></script>
+    <script src="/sagaswap/public/js/script.js"></script>
 </body>
 
 </html>
