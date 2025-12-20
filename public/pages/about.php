@@ -15,8 +15,8 @@
         script-src 'self';
         font-src 'self';
         img-src 'self';" />
-    <link rel="stylesheet" href="/sagaswap/public/css/styles.css">
-    <link rel="stylesheet" href="/sagaswap/public/css/about.css">
+    <link rel="stylesheet" href="/sagaswap/public/css/styles.css" />
+    <link rel="stylesheet" href="/sagaswap/public/css/about.css" />
 
 </head>
 
@@ -35,7 +35,7 @@
                         </div>
                         <div class="body-content">
                             <div class="main-body-text">
-                                <p class="main-text-body-tb">
+                                <p class="body-text TopBottom">
                                     SagaSwap er Danmarks nye online markedsplads for secondhand varer, bygget på en
                                     kerne af open source.
                                     Idéen opstod i november 2024 med et ønske om at skabe en platform,
@@ -66,7 +66,7 @@
                                     så vælger flere det.<br />Og dét er præcis visionen bag
                                     SagaSwap: at gøre bæredygtige valg til de oplagte valg.
                                 </p>
-                                <p class="main-text-body-tb">
+                                <p class="body-text TopBottom">
                                     Vores mål er at gøre genbrug mere tilgængeligt og mere attraktivt. Derfor bygger
                                     SagaSwap på et system, hvor produkter automatisk samles og organiseres, efterhånden
                                     som brugerne opretter dem. <br />Det gør det hurtigt at lægge en vare til salg og
