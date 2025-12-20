@@ -197,7 +197,6 @@ button:hover {
   }
 }
 /* header end */
-
 /* main start */
 .main-main {
   display: flex;
@@ -255,6 +254,7 @@ h1.main-text {
   display: block;
   justify-items: center;
 }
+/* main end */
 /* menu start */
 [include-html="../includes/main-header-menu.html"] {
   display: flex;

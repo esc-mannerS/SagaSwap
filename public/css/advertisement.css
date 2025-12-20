@@ -1,0 +1,28 @@
+.advert-container {
+  display: flex;
+  width: 100%;
+  color: var(--color-3);
+  font-size: var(--reg-text-size);
+  font-weight: var(--reg-text-weight);
+}
+
+.advert-group-text {
+  width: 55%;
+}
+
+.group-text {
+  margin: 0.6rem 0;
+}
+
+.group-text.TopBottom {
+  margin: 0;
+}
+
+.advert-group-text.first {
+  margin-right: 10%;
+}
+
+.advert-group-image {
+  width: 35%;
+  background-color: blue;
+}
