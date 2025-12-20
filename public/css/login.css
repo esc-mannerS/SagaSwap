@@ -43,7 +43,7 @@
 
 .login-field label {
   position: absolute;
-  top: -0.6rem;
+  top: -28%;
   left: 1.3rem;
   background-color: var(--color-2);
   display: block;

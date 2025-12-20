@@ -134,12 +134,19 @@ require_once __DIR__ . '/../actions/my-profile/my-profile-logic.php';
                                     </div>
                                     <div class="text-group">
                                         <div class="listed-text">
-                                            <p>ISBN: </p><?= htmlspecialchars($listing['isbn']) ?>
+                                            <p class="listed-head">ISBN</p>
+                                            <p class="listed-body"><?= htmlspecialchars($listing['isbn']) ?></p>
                                         </div>
-                                        <div class="listed-text">Pris: <?= htmlspecialchars($listing['price']) ?>
-                                            <?= htmlspecialchars($listing['currency']) ?></div>
-                                        <div class="listed-text">Status:
-                                            <?= htmlspecialchars (t('status.' . $listing['status'])) ?></div>
+                                        <div class="listed-text">
+                                            <p class="listed-head">Pris</p>
+                                            <p class="listed-body"><?= htmlspecialchars($listing['price']) ?>
+                                                <?= htmlspecialchars($listing['currency']) ?></p>
+                                        </div>
+                                        <div class="listed-text">
+                                            <p class="listed-head">Status</p>
+                                            <p class="listed-body">
+                                                <?= htmlspecialchars (t('status.' . $listing['status'])) ?></p>
+                                        </div>
                                     </div>
                                 </div>
                                 <?php endforeach; ?>

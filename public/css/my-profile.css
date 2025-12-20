@@ -62,7 +62,7 @@
 
 .listing-field label {
   position: absolute;
-  top: -0.6rem;
+  top: -28%;
   left: 1.3rem;
   background-color: var(--color-2);
   display: block;
@@ -149,6 +149,7 @@
   margin-top: 2rem;
   display: flex;
   width: 100%;
+  color: var(--color-3);
 }
 
 .listed-image {
@@ -164,13 +165,41 @@
   height: 8rem;
 }
 
+.image-group img {
+  border-radius: calc(var(--border-box) - 10%);
+}
+
 .text-group {
   width: 80%;
   display: flex;
 }
 
 .listed-text {
+  display: flex;
   width: 20%;
+  margin-right: 0.2rem;
+  padding: 0.2rem;
+  border-radius: var(--border-box);
+  border: var(--color-4) solid 0.3rem;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.listed-head {
+  left: 1.3rem;
+  top: -28%;
+  position: absolute;
+  display: block;
+  background-color: var(--color-2);
+  font-size: var(--sub-text-size);
+  font-weight: var(--sub-text-weight);
+}
+
+.listed-body {
+  text-align: center;
+  font-size: var(--reg-text-size);
+  font-weight: var(--reg-text-weight);
 }
 /* my listings end */
 /* profil settings start */
