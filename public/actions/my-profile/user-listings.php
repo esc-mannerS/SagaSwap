@@ -18,9 +18,11 @@ $sql = "
         l.price,
         l.currency,
         l.status,
-        li.image_path
+        li.image_path,
+        b.title
     FROM listings l
     LEFT JOIN listings_images li ON li.listing_id = l.id
+    lEFT JOIN books b ON b.isbn = l.isbn
     WHERE l.user_id = ?
     ORDER BY l.created_at DESC
 ";
@@ -41,7 +43,8 @@ while ($row = $result->fetch_assoc()) {
             'price' => $row['price'],
             'currency' => $row['currency'],
             'status' => $row['status'],
-            'images' => []
+            'images' => [],
+            'title' => $row['title'] ?? null
         ];
     }
 

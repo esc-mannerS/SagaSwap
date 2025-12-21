@@ -62,10 +62,14 @@
 
 .listing-field label {
   position: absolute;
-  top: -28%;
+  top: -0.7rem;
   left: 1.3rem;
   background-color: var(--color-2);
   display: block;
+}
+
+.listing-field.image label {
+  top: -0.8rem;
 }
 
 .listing-field input {
@@ -150,23 +154,28 @@
   display: flex;
   width: 100%;
   color: var(--color-3);
+  border-radius: var(--border-box);
+  border: var(--color-4) solid 0.3rem;
+}
+
+.image-group {
+  display: flex;
+  margin-right: 0.7rem;
 }
 
 .listed-image {
-  width: 2.6rem;
-  height: 4rem;
+  width: 2.7rem;
+  min-height: 4rem;
   object-fit: cover;
   margin-right: 0.3rem;
   transition: var(--input-transition);
+  transform-origin: top center;
+  border-radius: calc(var(--border-box) * 0.7);
 }
 
 .listed-image:hover {
-  width: 5.2rem;
+  width: 5.4rem;
   height: 8rem;
-}
-
-.image-group img {
-  border-radius: calc(var(--border-box) - 10%);
 }
 
 .text-group {
@@ -176,19 +185,14 @@
 
 .listed-text {
   display: flex;
-  width: 20%;
-  margin-right: 0.2rem;
-  padding: 0.2rem;
-  border-radius: var(--border-box);
-  border: var(--color-4) solid 0.3rem;
+  margin-right: 1rem;
   position: relative;
   align-items: center;
-  justify-content: center;
+  max-width: 20%;
 }
 
 .listed-head {
-  left: 1.3rem;
-  top: -28%;
+  top: -0.8rem;
   position: absolute;
   display: block;
   background-color: var(--color-2);
@@ -197,9 +201,10 @@
 }
 
 .listed-body {
-  text-align: center;
   font-size: var(--reg-text-size);
   font-weight: var(--reg-text-weight);
+  text-align: left;
+  padding: 0.6rem 0;
 }
 /* my listings end */
 /* profil settings start */

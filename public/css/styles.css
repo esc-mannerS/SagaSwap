@@ -104,11 +104,11 @@ label {
 
 ::placeholder {
   color: var(--color-6);
-  font-size: calc(var(--input-text-size) - 10%);
+  font-size: calc(var(--input-text-size) * 0.9);
 }
 
 input {
-  font-size: calc(var(--input-text-size) - 10%);
+  font-size: calc(var(--input-text-size) * 0.9);
   font-weight: var(--reg-text-weight);
   outline: none;
   border-radius: var(--border-box);
@@ -124,7 +124,7 @@ button {
   background-color: var(--color-2);
   border: var(--color-4) solid 0.3rem;
   color: var(--color-6);
-  font-size: calc(var(--input-text-size) - 10%);
+  font-size: calc(var(--input-text-size) * 0.9);
   font-weight: var(--reg-text-weight);
   padding: 0.3rem;
   transition: var(--input-transition);
@@ -325,7 +325,7 @@ h1.main-text {
 .selected {
   cursor: pointer;
   color: var(--color-6);
-  font-size: calc(var(--input-text-size) - 10%);
+  font-size: calc(var(--input-text-size) * 0.9);
 }
 
 .options {

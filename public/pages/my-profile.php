@@ -134,6 +134,10 @@ require_once __DIR__ . '/../actions/my-profile/my-profile-logic.php';
                                     </div>
                                     <div class="text-group">
                                         <div class="listed-text">
+                                            <p class="listed-head">Title</p>
+                                            <p class="listed-body"><?= htmlspecialchars($listing['title']) ?></p>
+                                        </div>
+                                        <div class="listed-text">
                                             <p class="listed-head">ISBN</p>
                                             <p class="listed-body"><?= htmlspecialchars($listing['isbn']) ?></p>
                                         </div>
