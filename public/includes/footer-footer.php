@@ -34,7 +34,7 @@
             <h5 class="navigation-text">Infomation</h5>
             <ul>
                 <li><a href="/sagaswap/public/pages/advertisement.php">Erhvervs annoncering</a></li>
-                <li><a href="">Privatlivspolitik</a></li>
+                <li><a href="/sagaswap/public/pages/privacy-policies.php">Privatlivspolitik</a></li>
                 <li><a href="/sagaswap/public/pages/userterms.php">Brugervilkår</a></li>
             </ul>
         </div>

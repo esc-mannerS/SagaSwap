@@ -20,7 +20,6 @@ require_once __DIR__ . '/../includes/bootstrap.php';
         font-src 'self';
         img-src 'self';" />
     <link rel="stylesheet" href="/sagaswap/public/css/styles.css" />
-    <link rel="stylesheet" href="/sagaswap/public/css/userterms.css" />
 </head>
 
 <body>
@@ -34,7 +33,7 @@ require_once __DIR__ . '/../includes/bootstrap.php';
                     <div class="main-content">
                         <div class="head-content">
                             <h1 class="main-text">Brugervilkår</h1>
-                            <h2 class="main-text">Læs her under om brugervilkår</h2>
+                            <h2 class="main-text">Læs her under vores Brugervilkår</h2>
                         </div>
                         <div class="body-content">
                             <div class="body-content-text">
