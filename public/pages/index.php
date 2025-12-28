@@ -47,7 +47,7 @@ require_once __DIR__ . '/../includes/bootstrap.php';
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="">
+                                        <a href="/sagaswap/public/pages/books.php">
                                             <div>
                                                 <img src="/sagaswap/public/main-category/main-category-books.webp"
                                                     class="category-image" />

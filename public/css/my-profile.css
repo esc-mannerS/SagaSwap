@@ -153,22 +153,32 @@
   margin-top: var(--padding-body-box);
 }
 
-.listed-text.DeleteButton {
-  justify-content: flex-end;
-  align-items: last baseline;
-  max-width: 100%;
+.listed-text.Buttons {
+  justify-content: center;
+  flex-direction: column;
 }
 
-.delete-listing {
+.listed-button-group {
+  width: 100%;
+}
+
+.listed-button {
+  width: 100%;
+  margin-bottom: 0.6rem;
+}
+
+.DeleteButton {
   background: var(--color-5);
   box-shadow: var(--shadow);
   border-radius: var(--border-box);
   color: var(--color-4);
   border: var(--color-5) solid 0.1rem;
   font-weight: var(--reg-text-weight);
-  font-size: 0.9rem;
-  width: 100%;
   cursor: pointer;
+}
+
+.listed-button.DeleteButton {
+  margin-bottom: 0;
 }
 /* my listings end */
 /* profil settings start */
@@ -197,17 +207,6 @@
 
 .profile-body-column {
   padding-right: 0.6rem;
-}
-
-.delete-user {
-  background: var(--color-5);
-  box-shadow: var(--shadow);
-  border-radius: var(--border-box);
-  color: var(--color-4);
-  border: var(--color-5) solid 0.1rem;
-  font-weight: var(--reg-text-weight);
-  font-size: 0.9rem;
-  cursor: pointer;
 }
 
 .profile-body-group.three {

@@ -143,7 +143,8 @@ require_once __DIR__ . '/../actions/my-profile/my-profile-logic.php';
                                         </div>
                                         <div class="listed-text">
                                             <p class="listed-head">Pris</p>
-                                            <p class="listed-body"><?= htmlspecialchars($listing['price']) ?>
+                                            <p class="listed-body">
+                                                <?= number_format((float)$listing['price'], 2, ',', '.') ?>
                                                 <?= htmlspecialchars($listing['currency']) ?></p>
                                         </div>
                                         <div class="listed-text">
@@ -151,16 +152,23 @@ require_once __DIR__ . '/../actions/my-profile/my-profile-logic.php';
                                             <p class="listed-body">
                                                 <?= htmlspecialchars (t('status.' . $listing['status'])) ?></p>
                                         </div>
-                                        <div class="listed-text DeleteButton">
-                                            <form class="confirm-delete"
-                                                action="/sagaswap/public/actions/my-profile/delete-listing.php"
-                                                method="POST">
-                                                <input type="hidden" name="listing_id"
-                                                    value="<?php echo htmlspecialchars($id); ?>">
-                                                <button type="submit" class="delete-listing">
-                                                    <span>Slet annonce!</span>
+                                        <div class="listed-text Buttons">
+                                            <div class="listed-button-group">
+                                                <button type="submit" class="listed-button">
+                                                    <span>Rediger annonce</span>
                                                 </button>
-                                            </form>
+                                            </div>
+                                            <div class="listed-button-group">
+                                                <form class="confirm-delete"
+                                                    action="/sagaswap/public/actions/my-profile/delete-listing.php"
+                                                    method="POST">
+                                                    <input type="hidden" name="listing_id"
+                                                        value="<?php echo htmlspecialchars($id); ?>">
+                                                    <button type="submit" class="listed-button DeleteButton">
+                                                        <span>Slet annonce!</span>
+                                                    </button>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -210,7 +218,7 @@ require_once __DIR__ . '/../actions/my-profile/my-profile-logic.php';
                                                 method="POST">
                                                 <input type="hidden" name="user_id"
                                                     value="<?php echo htmlspecialchars($id); ?>">
-                                                <button type="submit" class="delete-user">
+                                                <button type="submit" class="DeleteButton">
                                                     <span>Slet min bruger og alt data!</span>
                                                 </button>
                                             </form>
