@@ -5,16 +5,19 @@ The core of the SagaSwap platform is open source. There are addons which are pro
 
 ## Changelog and News
 
+Coming after Go-Live...
+
 #### Version construction
 
-- 0.X.X.X - Production year
-- X.0.X.X - Major features
-- X.X.0.X - Minor updates
-- X.X.X.0 - Small changes
+- 0.X.X - Major features
+- X.0.X - Minor updates
+- X.X.0 - Small changes
 
 Detailed version history and changelog can be found [her](https://github.com/esc-mannerS/SagaSwap/blob/main/Changelog.md).
 
 ## Features under development
+
+Coming after Go-Live...
 
 ## Credit and acknowledgments
 
