@@ -9,6 +9,7 @@ $sql = "
     SELECT
         b.isbn,
         b.title,
+        b.author,
         COUNT(l.id)  AS total_listings,
         AVG(l.price) AS avg_price
     FROM books b

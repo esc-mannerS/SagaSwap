@@ -13,7 +13,11 @@ if (!isset($_GET['isbn'])) {
 $isbn = $_GET['isbn'];
 
 // fetch book info
-$sql = "SELECT title FROM books WHERE isbn = ?";
+$sql = "
+    SELECT 
+        title,
+        author 
+    FROM books WHERE isbn = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("s", $isbn);
 $stmt->execute();

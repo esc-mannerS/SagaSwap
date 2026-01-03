@@ -34,9 +34,7 @@ require_once __DIR__ . '/../actions/books-listings/books-listings-logic.php';
                     <div class="main-content">
                         <div class="head-content">
                             <h1 class="main-text"><?= htmlspecialchars($book['title']) ?></h1>
-                            <h2 class="main-text">
-                                Annoncer for denne bog
-                            </h2>
+                            <h2 class="main-text">Af <?= htmlspecialchars($book['author']) ?></h2>
                         </div>
                         <div class="body-content">
                             <?php if (empty($listings)): ?>
@@ -54,7 +52,7 @@ require_once __DIR__ . '/../actions/books-listings/books-listings-logic.php';
                                     <div class="listed-text">
                                         <p class="listed-head">Pris</p>
                                         <p class="listed-body">
-                                            <?= number_format((float)$listing['price'], 2, ',', '.') ?> kr.
+                                            <?= number_format((float)$listing['price'], 2, ',', '.') ?> DKK
                                         </p>
                                     </div>
 
