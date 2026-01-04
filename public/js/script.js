@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initNewListingFields();
   initPriceCorrection();
   initFetchBookByIsbn();
+  initEditListingPrice();
 });
 
 // global functions start
@@ -246,31 +247,34 @@ document.getElementById("isbn").addEventListener("blur", function () {
     .catch((err) => console.error(err));
 });
 
-// new listing price correction
+// listing price correction
 function initPriceCorrection() {
-  const priceInput = document.getElementById("price");
-  if (!priceInput) return;
+  const priceInputs = document.querySelectorAll("#price");
+  if (!priceInputs.length) return;
 
-  priceInput.addEventListener("blur", () => {
-    let value = priceInput.value.trim();
-    if (!value) return;
+  priceInputs.forEach((priceInput) => {
+    if (priceInput.dataset.correctorAttached) return;
+    priceInput.dataset.correctorAttached = "true";
 
-    // Remove all non-numeric and comma characters
-    value = value.replace(/[^\d,]/g, "");
+    priceInput.addEventListener("blur", () => {
+      let value = priceInput.value.trim();
+      if (!value) return;
 
-    // Split decimals by comma
-    let [whole, decimal] = value.split(",");
-    whole = whole.replace(/\./g, ""); // remove thousand separators
+      // remove all non-digit, comma, and dot characters
+      value = value.replace(/[^\d,\.]/g, "");
 
-    // Add thousand separators
-    whole = whole.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+      // convert to float: replace thousand dots and comma decimals
+      const numericValue = parseFloat(
+        value.replace(/\./g, "").replace(",", ".")
+      );
+      if (isNaN(numericValue)) return;
 
-    // Fix decimals
-    if (!decimal) decimal = "00";
-    else if (decimal.length === 1) decimal += "0";
-    else if (decimal.length > 2) decimal = decimal.substring(0, 2);
-
-    priceInput.value = `${whole},${decimal}`;
+      // format as Danish number
+      priceInput.value = new Intl.NumberFormat("da-DK", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      }).format(numericValue);
+    });
   });
 }
 
@@ -337,4 +341,80 @@ customBox.addEventListener("drop", (e) => {
   const files = Array.from(e.dataTransfer.files);
   handleFiles(files);
 });
+
+// edit listing
+function initEditListingPrice() {
+  const formatPrice = (price) => {
+    return new Intl.NumberFormat("da-DK", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(price);
+  };
+
+  document.querySelectorAll(".EditListing").forEach((button) => {
+    button.addEventListener("click", async () => {
+      const listingId = button.dataset.listingId?.trim();
+      const priceEl = document.querySelector(
+        `.EditPrice[data-listing-id="${listingId}"]`
+      );
+      if (!priceEl) return;
+
+      const isEditing = button.dataset.editing === "true";
+
+      if (isEditing) {
+        const input = priceEl.querySelector(".EditPriceInput");
+        if (!input) return;
+
+        const rawValue = input.value.replace(/\./g, "").replace(",", ".");
+        const newPrice = parseFloat(rawValue);
+        if (!newPrice || newPrice <= 0) return alert("Indtast en gyldig pris!");
+
+        try {
+          const res = await fetch(
+            "/sagaswap/public/actions/my-profile/update-user-listing.php",
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              credentials: "same-origin",
+              body: JSON.stringify({
+                listing_id: parseInt(listingId, 10),
+                price: newPrice,
+              }),
+            }
+          );
+
+          const text = await res.text();
+          let data;
+          try {
+            data = JSON.parse(text);
+          } catch {
+            console.error("Server response was not valid JSON:", text);
+            return alert("Noget gik galt. Prøv igen.");
+          }
+
+          if (data.success) {
+            priceEl.textContent = data.formatted_price || formatPrice(newPrice);
+            button.dataset.price = newPrice;
+            button.dataset.editing = "false";
+            button.querySelector("span").textContent = "Rediger annonce";
+          } else {
+            alert(data.error || "Noget gik galt");
+          }
+        } catch {
+          alert("Kunne ikke opdatere. Tjek din internetforbindelse.");
+        }
+      } else {
+        const currentPrice = parseFloat(button.dataset.price || 0);
+        const formattedPrice = formatPrice(currentPrice);
+        priceEl.innerHTML = `<input type="text" id="price" class="EditPriceInput" value="${formattedPrice}">`;
+        initPriceCorrection();
+        button.dataset.editing = "true";
+        button.querySelector("span").textContent = "Gem";
+        priceEl.querySelector(".EditPriceInput")?.focus();
+      }
+    });
+  });
+}
+
+document.addEventListener("DOMContentLoaded", initEditListingPrice);
 // my profile end

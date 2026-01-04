@@ -142,19 +142,24 @@ require_once __DIR__ . '/../actions/my-profile/my-profile-logic.php';
                                             <p class="listed-body"><?= htmlspecialchars($listing['isbn']) ?></p>
                                         </div>
                                         <div class="listed-text">
-                                            <p class="listed-head">Pris</p>
+                                            <p class="listed-head">Oprettet</p>
                                             <p class="listed-body">
-                                                <?= number_format((float)$listing['price'], 2, ',', '.') ?>
-                                                <?= htmlspecialchars($listing['currency']) ?></p>
+                                                <?= formatDateDa($listing['created_at']) ?>
+                                            </p>
                                         </div>
                                         <div class="listed-text">
-                                            <p class="listed-head">Status</p>
-                                            <p class="listed-body">
-                                                <?= htmlspecialchars (t('status.' . $listing['status'])) ?></p>
+                                            <p class="listed-head">Pris</p>
+                                            <p class="listed-body EditPrice"
+                                                data-listing-id="<?= htmlspecialchars($id) ?>">
+                                                <?= number_format((float)$listing['price'], 2, ',', '.') ?>
+                                                <?= htmlspecialchars($listing['currency']) ?>
+                                            </p>
                                         </div>
                                         <div class="listed-text Buttons">
                                             <div class="listed-button-group">
-                                                <button type="submit" class="listed-button">
+                                                <button type="button" class="listed-button EditListing"
+                                                    data-listing-id="<?= htmlspecialchars($id) ?>"
+                                                    data-price="<?= htmlspecialchars($listing['price']) ?>">
                                                     <span>Rediger annonce</span>
                                                 </button>
                                             </div>
@@ -208,8 +213,7 @@ require_once __DIR__ . '/../actions/my-profile/my-profile-logic.php';
                                             </div>
                                             <div class="profile-body-column">
                                                 <p><?php echo htmlspecialchars($id); ?></p>
-                                                <p><?php echo date("d m Y", strtotime(htmlspecialchars($created_at))); ?>
-                                                </p>
+                                                <p> <?= formatDateDa($listing['created_at']) ?></p>
                                             </div>
                                         </div>
                                         <div class="dead-user-info delete">

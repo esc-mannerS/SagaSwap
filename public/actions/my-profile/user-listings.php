@@ -17,7 +17,7 @@ $sql = "
         l.isbn,
         l.price,
         l.currency,
-        l.status,
+        l.created_at,
         li.image_path,
         b.title
     FROM listings l
@@ -42,7 +42,7 @@ while ($row = $result->fetch_assoc()) {
             'isbn' => $row['isbn'],
             'price' => $row['price'],
             'currency' => $row['currency'],
-            'status' => $row['status'],
+            'created_at' => $row['created_at'],
             'images' => [],
             'title' => $row['title'] ?? null
         ];

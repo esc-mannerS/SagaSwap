@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/../includes/bootstrap.php';
 require_once __DIR__ . '/../actions/books-listings/books-listings-logic.php';
 ?>
 
@@ -59,7 +60,7 @@ require_once __DIR__ . '/../actions/books-listings/books-listings-logic.php';
                                     <div class="listed-text">
                                         <p class="listed-head">Oprettet</p>
                                         <p class="listed-body">
-                                            <?= date('d m Y', strtotime($listing['created_at'])) ?>
+                                            <?= formatDateDa($listing['created_at']) ?>
                                         </p>
                                     </div>
                                 </div>

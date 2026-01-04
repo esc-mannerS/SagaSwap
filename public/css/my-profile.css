@@ -180,6 +180,10 @@
 .listed-button.DeleteButton {
   margin-bottom: 0;
 }
+
+.EditPriceInput {
+  width: 100%;
+}
 /* my listings end */
 /* profil settings start */
 .user-profile {

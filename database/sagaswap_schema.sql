@@ -66,7 +66,7 @@ CREATE TABLE `listings` (
   `price` decimal(12,2) NOT NULL,
   `currency` char(3) NOT NULL DEFAULT 'DKK',
   `municipality_id` int(11) unsigned NOT NULL,
-  `status` enum('active','sold','expired') NOT NULL DEFAULT 'active',
+  `status` enum('active','sold') NOT NULL DEFAULT 'active',
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`),
