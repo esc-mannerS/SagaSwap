@@ -59,12 +59,14 @@ require_once __DIR__ . '/../actions/books/books-logic.php';
                                             </div>
                                             <div class="listed-text">
                                                 <p class="listed-head">Annoncer</p>
-                                                <p class="listed-body"><?= htmlspecialchars($book['total_listings']) ?>
+                                                <p class="listed-body">
+                                                    <?= htmlspecialchars($book['total_listings']) ?>
                                                 </p>
                                             </div>
                                             <div class="listed-text">
                                                 <p class="listed-head">Gns. pris</p>
-                                                <p class="listed-body"><?= htmlspecialchars($book['avg_price']) ?> DKK
+                                                <p class="listed-body"><?= htmlspecialchars($book['avg_price']) ?>
+                                                    DKK
                                                 </p>
                                             </div>
                                         </div>
